@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRIS Pay - Калкулатор на таксите и спестяванията</title>
+  <meta name="description" content="Изчислете колко спестява вашият бизнес с IRIS Pay. Сравнете вашите трансакционни такси с нашата фиксирана такса от 0.49%.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="#" class="header__logo-link">
+      <img src="images/iris-logo.svg" alt="IRIS Pay Logo" class="header__logo">
+    </a>
+    <nav class="header__nav">
+      <ul class="header__menu">
+        <li><a href="#" class="header__menu-link">Бизнес</a></li>
+        <li><a href="#" class="header__menu-link">Физически лица</a></li>
+        <li><a href="#" class="header__menu-link">Продукти</a></li>
+        <li><a href="#" class="header__menu-link">Цени</a></li>
+        <li><a href="#" class="header__menu-link">За нас</a></li>
+        <li><a href="#" class="header__menu-link">Контакти</a></li>
+      </ul>
+      <div class="header__actions">
+        <a href="#" class="btn btn--black">Вход</a>
+        <a href="#" class="btn btn--blue">Регистрирай се</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Hero Wrapper -->
+  <main class="hero-wrapper">
+    <!-- Liquid Gradient Background -->
+    <div class="gradient-bg">
+      <!-- SVG filter for liquid blend (goo) -->
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div class="gradient-bg__container">
+        <div class="gradient-bg__g1"></div>
+        <div class="gradient-bg__g2"></div>
+        <div class="gradient-bg__g3"></div>
+        <div class="gradient-bg__g4"></div>
+        <div class="gradient-bg__g5"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Left Side: Hero Text -->
+        <div class="hero-text">
+          <div class="hero-pill">
+            <i>IRIS Pay</i> Спестяване за бизнеса
+          </div>
+          <h1 class="hero-title">
+            Умните бизнеси не плащат излишни такси
+          </h1>
+          <p class="hero-description">
+            IRIS Pay прави приемането на плащания бързо, сигурно и с до 60% по-малко разходи. Изчислете спестяванията на вашия бизнес спрямо стандартните такси на пазара.
+          </p>
+          <a class="btn btn--circle-blue" href="#calculator">
+            <span class="btn__txt">Регистрирай се и спестявай</span>
+            <span class="btn__icon-box">
+              <svg class="btn__arrow-svg" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <!-- Right Side: Calculator Card -->
+        <div class="calc-card" id="calculator">
+          <div class="calc-card__title">
+            <span>Изчисли <span class="calc-card__title-highlight">разходите си</span></span>
+          </div>
+
+          <!-- Slider 1: Annual Turnover -->
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <span class="calc-label">Годишен оборот</span>
+              <div class="calc-input-wrapper">
+                <input type="text" id="turnoverInput" class="calc-number-input" value="1 000 000">
+                <span class="calc-input-symbol">€</span>
+              </div>
+            </div>
+            <div class="slider-container">
+              <input type="range" id="turnoverSlider" class="range-slider" min="100000" max="10000000" step="50000" value="1000000">
+              <div class="slider-scale">
+                <span>100 хил. €</span>
+                <span>5 млн. €</span>
+                <span>10 млн. €</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider 2: Competitor Transaction Fee -->
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <span class="calc-label">Текуща такса на транзакция</span>
+              <span id="feeDisplay" class="calc-value-display">1.50%</span>
+            </div>
+            <div class="slider-container">
+              <input type="range" id="feeSlider" class="range-slider" min="0.8" max="3.0" step="0.05" value="1.50">
+              <div class="slider-scale">
+                <span>0.8%</span>
+                <span>1.9%</span>
+                <span>3.0%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider 3: IRIS Pay Fixed Fee -->
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <span class="calc-label">IRIS Pay</span>
+              <span class="locked-badge">
+                <svg class="locked-badge-icon" viewBox="0 0 24 24">
+                  <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                </svg>
+                Възполвай се сега
+              </span>
+            </div>
+            <div class="slider-container">
+              <!-- Scale from 0 to 3.0 to show 0.49% is physically further left than 0.8% -->
+              <input type="range" id="irisSlider" class="range-slider range-slider--locked range-slider--iris" min="0" max="3.0" value="0.49" disabled>
+              <div class="slider-scale">
+                <span style="color: var(--primary-blue); font-weight: 800;">0.49%</span>
+                <span>0.8%</span>
+                <span>3.0%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Calculator Results Section -->
+          <div class="calc-results">
+            <div class="results-row">
+              <span class="results-label">Текущ годишен разход за такси:</span>
+              <span id="currentCost" class="results-value">€15,000</span>
+            </div>
+            <div class="results-row">
+              <span class="results-label">Годишен разход с IRIS Pay (0.49%):</span>
+              <span id="irisCost" class="results-value" style="color: #20b426;">€4,900</span>
+            </div>
+            
+            <!-- Highlighted Savings -->
+            <div class="results-row results-row--savings">
+              <div class="results-label">
+                Спестявания на година
+                <span class="results-savings-badge">С до 67% по-малко разходи</span>
+              </div>
+              <div id="savingsCost" class="results-value--savings">€10,100<span>/ год.</span></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/iris-logo.svg" alt="IRIS Pay Logo" style="height: 3.5rem;">
+          <p>Приемането на плащания – бързо, сигурно и с до 60% по-малко разходи. Бъдещето на дигиталните разплащания е тук.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Продукти</h4>
+          <ul class="footer-links">
+            <li><a href="#">IRIS Pay by Click</a></li>
+            <li><a href="#">IRIS Pay by Link</a></li>
+            <li><a href="#">IRIS Pay by QR</a></li>
+            <li><a href="#">IRIS Pay for Merchants</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">За нас</h4>
+          <ul class="footer-links">
+            <li><a href="#">За компанията</a></li>
+            <li><a href="#">Често задавани въпроси</a></li>
+            <li><a href="#">Контакти</a></li>
+            <li><a href="#">Ресурси</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2013-2026 IRIS Pay. Всички права запазени.</p>
+        <div class="footer-legal-links">
+          <a href="#">Общи условия</a>
+          <a href="#">Политика за поверителност</a>
+          <a href="#">Бисквитки</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
