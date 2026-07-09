@@ -457,6 +457,7 @@ body {
   border: 4px solid var(--primary-blue);
   box-shadow: 0 2px 5px rgba(0, 0, 250, 0.2);
   transition: transform 0.15s, background-color 0.15s;
+  margin-top: -0.8rem;
 }
 
 .range-slider::-webkit-slider-thumb:hover {
@@ -502,6 +503,7 @@ body {
   box-shadow: none;
   transform: none !important;
   cursor: not-allowed;
+  margin-top: -0.8rem;
 }
 
 .range-slider--locked::-moz-range-thumb {
@@ -520,13 +522,14 @@ body {
 }
 
 /* Custom style override for IRIS Pay slider (light cyan-blue) */
-.range-slider--iris::-webkit-slider-thumb {
+.range-slider--locked.range-slider--iris::-webkit-slider-thumb {
   border-color: var(--cyan-blue) !important;
   background-color: #f0f6ff !important;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300bff2'><path d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z'/></svg>") !important;
+  margin-top: -0.8rem;
 }
 
-.range-slider--iris::-moz-range-thumb {
+.range-slider--locked.range-slider--iris::-moz-range-thumb {
   border-color: var(--cyan-blue) !important;
   background-color: #f0f6ff !important;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300bff2'><path d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z'/></svg>") !important;
