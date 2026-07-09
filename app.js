@@ -162,8 +162,8 @@ function init() {
   updateSliderBackground(feeSlider, 0.8, 3.0, initialFee);
   
   // IRIS Pay Slider is locked at 0.49%. Scale is 0% to 3.0%
-  // Progress bar for IRIS Pay: 0.49% (16.33%) to 0.8% (26.67% of width) using cyan-blue to highlight savings gap
-  irisSlider.style.background = `linear-gradient(to right, #dee4ec 0%, #dee4ec 16.33%, var(--cyan-blue) 16.33%, var(--cyan-blue) 26.67%, #dee4ec 26.67%, #dee4ec 100%)`;
+  // Progress bar for IRIS Pay: Starts at padlock (0.49% / 0% width) and goes to 0.8% (50% width) to visually highlight the gap
+  irisSlider.style.background = `linear-gradient(to right, var(--cyan-blue) 0%, var(--cyan-blue) 50%, #dee4ec 50%, #dee4ec 100%)`;
 
   // Initial calculations (no animation on load, just set initial state values)
   const competitorCost = (initialTurnover * initialFee) / 100;
