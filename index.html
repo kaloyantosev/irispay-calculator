@@ -130,12 +130,12 @@
               </span>
             </div>
             <div class="slider-container">
-              <!-- Scale from 0 to 3.0 to show 0.49% is physically further left than 0.8% -->
-              <input type="range" id="irisSlider" class="range-slider range-slider--locked range-slider--iris" min="0" max="3.0" step="0.01" value="0.49" disabled>
-              <div class="slider-scale">
-                <span style="color: var(--primary-blue); font-weight: 800;">0.49%</span>
-                <span>0.8%</span>
-                <span>3.0%</span>
+              <!-- Scale starts at 0.49 to place padlock at the far left edge -->
+              <input type="range" id="irisSlider" class="range-slider range-slider--locked range-slider--iris" min="0.49" max="3.0" step="0.01" value="0.49" disabled>
+              <div class="slider-scale" style="position: relative; height: 2rem;">
+                <span style="color: var(--cyan-blue); font-weight: 800; position: absolute; left: 0;">0.49%</span>
+                <span style="position: absolute; left: 12.35%; transform: translateX(-50%); font-weight: 600;">0.8%</span>
+                <span style="position: absolute; right: 0;">3.0%</span>
               </div>
             </div>
           </div>
