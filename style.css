@@ -369,10 +369,7 @@ body {
 
 /* Calculator Inputs Group */
 .calc-group {
-  margin-bottom: 2rem;
-  padding: 2rem 2.5rem;
-  border: 2px solid rgba(0, 0, 0, 0.08);
-  border-radius: 1.6rem;
+  margin-bottom: 3.5rem;
 }
 
 .calc-label-row {
