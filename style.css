@@ -219,35 +219,35 @@ body {
 }
 
 .gradient-bg__g1 {
-  background: radial-gradient(circle at center, rgba(247, 151, 29, 0.3) 0, rgba(247, 151, 29, 0) 50%) no-repeat;
+  background: radial-gradient(circle at center, rgba(247, 151, 29, 0.45) 0, rgba(247, 151, 29, 0) 50%) no-repeat;
   top: -10%;
   left: -10%;
   animation: moveVertical 25s ease infinite;
 }
 
 .gradient-bg__g2 {
-  background: radial-gradient(circle at center, rgba(0, 191, 242, 0.3) 0, rgba(0, 191, 242, 0) 50%) no-repeat;
+  background: radial-gradient(circle at center, rgba(0, 191, 242, 0.45) 0, rgba(0, 191, 242, 0) 50%) no-repeat;
   top: 40%;
   left: 50%;
   animation: moveInCircle 20s reverse infinite;
 }
 
 .gradient-bg__g3 {
-  background: radial-gradient(circle at center, rgba(0, 108, 250, 0.45) 0, rgba(0, 108, 250, 0) 50%) no-repeat;
+  background: radial-gradient(circle at center, rgba(0, 108, 250, 0.6) 0, rgba(0, 108, 250, 0) 50%) no-repeat;
   top: 20%;
   left: 20%;
   animation: moveHorizontal 30s ease infinite;
 }
 
 .gradient-bg__g4 {
-  background: radial-gradient(circle at center, rgba(247, 151, 29, 0.2) 0, rgba(247, 151, 29, 0) 50%) no-repeat;
+  background: radial-gradient(circle at center, rgba(247, 151, 29, 0.35) 0, rgba(247, 151, 29, 0) 50%) no-repeat;
   top: -20%;
   left: 40%;
   animation: moveInCircle 35s linear infinite;
 }
 
 .gradient-bg__g5 {
-  background: radial-gradient(circle at center, rgba(0, 191, 242, 0.25) 0, rgba(0, 191, 242, 0) 50%) no-repeat;
+  background: radial-gradient(circle at center, rgba(0, 191, 242, 0.4) 0, rgba(0, 191, 242, 0) 50%) no-repeat;
   top: 50%;
   left: -10%;
   animation: moveVertical 18s ease infinite;
