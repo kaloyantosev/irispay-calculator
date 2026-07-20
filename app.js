@@ -50,7 +50,7 @@ function animateNumber(element, startVal, endVal, duration = 300, isCurrency = t
     if (elapsed >= duration) {
       element.innerHTML = isCurrency ? formatCurrency(endVal) : formatNumber(endVal);
       if (element.id === 'savingsCost') {
-        element.innerHTML = formatCurrency(endVal) + '<span>/ год.</span>';
+        element.innerHTML = formatCurrency(endVal) + '<span>' + (window.currentSavingsSuffix || '/ год.') + '</span>';
       }
       return;
     }
@@ -61,7 +61,7 @@ function animateNumber(element, startVal, endVal, duration = 300, isCurrency = t
     const currentVal = startVal + range * easeProgress;
     
     if (element.id === 'savingsCost') {
-      element.innerHTML = formatCurrency(currentVal) + '<span>/ год.</span>';
+      element.innerHTML = formatCurrency(currentVal) + '<span>' + (window.currentSavingsSuffix || '/ год.') + '</span>';
     } else {
       element.innerHTML = isCurrency ? formatCurrency(currentVal) : formatNumber(currentVal);
     }
@@ -73,7 +73,7 @@ function animateNumber(element, startVal, endVal, duration = 300, isCurrency = t
 }
 
 // Perform calculations and update UI
-function calculate() {
+window.calculate = function calculate() {
   const turnover = parseNumberString(turnoverInput.value);
   const competitorFeePercent = parseFloat(feeSlider.value);
 
@@ -176,7 +176,7 @@ function init() {
 
   currentCostEl.innerHTML = formatCurrency(competitorCost);
   irisCostEl.innerHTML = formatCurrency(irisCost);
-  savingsCostEl.innerHTML = formatCurrency(savings) + '<span>/ год.</span>';
+  savingsCostEl.innerHTML = formatCurrency(savings) + '<span>' + (window.currentSavingsSuffix || '/ год.') + '</span>';
 }
 
 window.addEventListener('DOMContentLoaded', init);

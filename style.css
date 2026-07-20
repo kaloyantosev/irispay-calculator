@@ -168,6 +168,76 @@ body {
   fill: currentColor;
 }
 
+/* Language Dropdown */
+.lang-dropdown {
+  position: relative;
+  font-family: var(--font-family);
+  z-index: 100;
+}
+.lang-dropdown__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.6rem;
+  border-radius: 3rem;
+  border: 1px solid rgba(0, 17, 82, 0.1);
+  background: var(--white);
+  color: var(--dark-navy);
+  font-weight: 700;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.lang-dropdown__btn:hover {
+  background: rgba(0, 17, 82, 0.05);
+}
+.lang-dropdown__icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.lang-dropdown__menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: var(--white);
+  border: 1px solid rgba(0, 17, 82, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s;
+}
+.lang-dropdown:hover .lang-dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-dropdown__menu button {
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--dark-navy);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+.lang-dropdown__menu button:hover {
+  background: rgba(0, 17, 82, 0.05);
+}
+.lang-dropdown__menu button:first-child {
+  border-radius: 1rem 1rem 0 0;
+}
+.lang-dropdown__menu button:last-child {
+  border-radius: 0 0 1rem 1rem;
+}
+
 /* ==========================================================================
    Liquid Gradient Animated Background
    ========================================================================== */
