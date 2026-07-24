@@ -138,7 +138,7 @@
               <!-- Scale starts at 0.49 to place padlock at the far left edge -->
               <input type="range" id="irisSlider" class="range-slider range-slider--locked range-slider--iris" min="0.49" max="3.0" step="0.01" value="0.49" disabled>
               <div class="slider-scale" style="position: relative; height: 2rem;">
-                <span style="color: var(--cyan-blue); font-weight: 800; position: absolute; left: 0;">0.49%</span>
+                <span id="irisFeeLabel" style="color: var(--cyan-blue); font-weight: 800; position: absolute; left: 0;">0.49%</span>
                 <span style="position: absolute; left: 50%; transform: translateX(-50%); font-weight: 600;">0.8%</span>
                 <span style="position: absolute; right: 0;">3.0%</span>
               </div>
@@ -172,6 +172,19 @@
     </div>
   </main>
 
+  <!-- Secret Modal -->
+  <div class="secret-modal-overlay" id="secretModal">
+    <div class="secret-modal">
+      <h3>Генериране на оферта</h3>
+      <label>Нова комисионна за IRIS Pay (%):</label>
+      <input type="number" id="secretFeeInput" step="0.01" value="0.35" class="calc-number-input">
+      <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+        <button id="secretGenerateBtn" class="btn btn--blue" style="flex: 1;">Генерирай</button>
+        <button id="secretCloseBtn" class="btn" style="flex: 1; border: 1px solid #ccc;">Отказ</button>
+      </div>
+      <div id="secretLinkOutput" style="margin-top: 1.5rem; font-size: 1.1rem; word-break: break-all; color: var(--primary-blue);"></div>
+    </div>
+  </div>
 
 
   <script src="i18n.js?v=1.1"></script>

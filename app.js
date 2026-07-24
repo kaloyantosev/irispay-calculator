@@ -10,7 +10,22 @@ const irisCostEl = document.getElementById('irisCost');
 const savingsCostEl = document.getElementById('savingsCost');
 
 // Constants
-const IRIS_FEE_PERCENT = 0.49;
+let IRIS_FEE_PERCENT = 0.49;
+
+// Secret URL Parameter Logic (5 Days)
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('customFee') && urlParams.has('expires')) {
+  const expires = parseInt(urlParams.get('expires'), 10);
+  if (Date.now() < expires) {
+    let customFee = parseFloat(urlParams.get('customFee'));
+    if (!isNaN(customFee) && customFee >= 0) {
+      IRIS_FEE_PERCENT = customFee;
+    }
+  } else {
+    alert("Специалната оферта е изтекла.");
+  }
+}
+window.IRIS_FEE_PERCENT = IRIS_FEE_PERCENT;
 
 // Keep track of current values for animations
 let currentCompetitorCost = 0;
@@ -177,6 +192,54 @@ function init() {
   currentCostEl.innerHTML = formatCurrency(competitorCost);
   irisCostEl.innerHTML = formatCurrency(irisCost);
   savingsCostEl.innerHTML = formatCurrency(savings) + '<span>' + (window.currentSavingsSuffix || '/ год.') + '</span>';
+
+  // Update visually if custom fee was applied
+  if (IRIS_FEE_PERCENT !== 0.49) {
+    irisSlider.value = IRIS_FEE_PERCENT;
+    const irisFeeLabel = document.getElementById('irisFeeLabel');
+    if (irisFeeLabel) irisFeeLabel.textContent = IRIS_FEE_PERCENT + '%';
+  }
 }
 
 window.addEventListener('DOMContentLoaded', init);
+
+// Secret Modal Logic
+const headerLogo = document.querySelector('.header__logo');
+let clickCount = 0;
+let clickTimer = null;
+
+if (headerLogo) {
+  headerLogo.addEventListener('click', (e) => {
+    e.preventDefault();
+    clickCount++;
+    if (clickCount === 3) {
+      document.getElementById('secretModal').classList.add('active');
+      clickCount = 0;
+    }
+    clearTimeout(clickTimer);
+    clickTimer = setTimeout(() => { clickCount = 0; }, 500);
+  });
+}
+
+const closeBtn = document.getElementById('secretCloseBtn');
+if (closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    document.getElementById('secretModal').classList.remove('active');
+    document.getElementById('secretLinkOutput').textContent = '';
+  });
+}
+
+const generateBtn = document.getElementById('secretGenerateBtn');
+if (generateBtn) {
+  generateBtn.addEventListener('click', () => {
+    const fee = document.getElementById('secretFeeInput').value;
+    const expires = Date.now() + (5 * 24 * 60 * 60 * 1000); // 5 days
+    const newUrl = new URL(window.location.href);
+    newUrl.searchParams.set('customFee', fee);
+    newUrl.searchParams.set('expires', expires);
+    
+    const linkStr = newUrl.toString();
+    document.getElementById('secretLinkOutput').innerHTML = `<a href="${linkStr}" target="_blank">${linkStr}</a><br><br><span style="color: green;">Линкът е валиден 5 дни!</span>`;
+    window.open(linkStr, '_blank');
+  });
+}

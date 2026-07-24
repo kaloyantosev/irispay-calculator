@@ -143,7 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (translations[lang][key]) {
-        el.innerHTML = translations[lang][key];
+        let txt = translations[lang][key];
+        if (key === 'res-iris-cost' && typeof window.IRIS_FEE_PERCENT !== 'undefined') {
+          txt = txt.replace('0.49%', window.IRIS_FEE_PERCENT + '%');
+        }
+        el.innerHTML = txt;
       }
     });
 
