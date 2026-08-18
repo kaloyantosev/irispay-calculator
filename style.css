@@ -216,7 +216,8 @@ body {
   visibility: visible;
   transform: translateY(0);
 }
-.lang-dropdown__menu button {
+.lang-dropdown__menu button,
+.lang-dropdown__menu a {
   background: none;
   border: none;
   padding: 1rem 1.5rem;
@@ -226,15 +227,20 @@ body {
   color: var(--dark-navy);
   cursor: pointer;
   text-align: left;
+  text-decoration: none;
+  display: block;
   transition: background 0.2s;
 }
-.lang-dropdown__menu button:hover {
+.lang-dropdown__menu button:hover,
+.lang-dropdown__menu a:hover {
   background: rgba(0, 17, 82, 0.05);
 }
-.lang-dropdown__menu button:first-child {
+.lang-dropdown__menu button:first-child,
+.lang-dropdown__menu a:first-child {
   border-radius: 1rem 1rem 0 0;
 }
-.lang-dropdown__menu button:last-child {
+.lang-dropdown__menu button:last-child,
+.lang-dropdown__menu a:last-child {
   border-radius: 0 0 1rem 1rem;
 }
 

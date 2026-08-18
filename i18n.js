@@ -130,14 +130,15 @@ const translations = {
 window.currentSavingsSuffix = translations.bg['res-savings-suffix'];
 
 document.addEventListener('DOMContentLoaded', () => {
-  const langBtns = document.querySelectorAll('[data-lang]');
   const currentLangLabel = document.getElementById('currentLang');
   
   function setLanguage(lang) {
     if (!translations[lang]) return;
     
     document.documentElement.lang = lang;
-    currentLangLabel.textContent = lang.toUpperCase();
+    if (currentLangLabel) {
+      currentLangLabel.textContent = lang.toUpperCase();
+    }
     window.currentSavingsSuffix = translations[lang]['res-savings-suffix'];
     
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -151,16 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Trigger a recalculation to update the savings suffix in the DOM
     if (typeof window.calculate === 'function') {
       window.calculate();
     }
   }
 
-  langBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const lang = e.currentTarget.getAttribute('data-lang');
-      setLanguage(lang);
-    });
-  });
+  // Auto-initialize language from <html lang="...">
+  const pageLang = document.documentElement.lang || 'bg';
+  setLanguage(pageLang);
 });
