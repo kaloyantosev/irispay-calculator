@@ -17,7 +17,7 @@ const translations = {
     "res-current-cost": "Текущ годишен разход за такси:",
     "res-iris-cost": "Годишен разход с IRIS Pay (0.49%):",
     "res-savings-title": "Спестявания на година",
-    "res-savings-badge": "С до 67% по-малко разходи",
+    "res-savings-badge": "С до 60% по-малко разходи",
     "res-savings-suffix": "/ год."
   },
   en: {
@@ -38,7 +38,7 @@ const translations = {
     "res-current-cost": "Current annual fee cost:",
     "res-iris-cost": "Annual cost with IRIS Pay (0.49%):",
     "res-savings-title": "Annual Savings",
-    "res-savings-badge": "Up to 67% less costs",
+    "res-savings-badge": "Up to 60% less costs",
     "res-savings-suffix": "/ yr."
   },
   ro: {
@@ -59,7 +59,7 @@ const translations = {
     "res-current-cost": "Costul anual curent al taxelor:",
     "res-iris-cost": "Cost anual cu IRIS Pay (0.49%):",
     "res-savings-title": "Economii anuale",
-    "res-savings-badge": "Cu până la 67% mai puține costuri",
+    "res-savings-badge": "Cu până la 60% mai puține costuri",
     "res-savings-suffix": "/ an"
   },
   hr: {
@@ -80,7 +80,7 @@ const translations = {
     "res-current-cost": "Trenutni godišnji trošak naknada:",
     "res-iris-cost": "Godišnji trošak uz IRIS Pay (0.49%):",
     "res-savings-title": "Godišnja ušteda",
-    "res-savings-badge": "Do 67% manje troškova",
+    "res-savings-badge": "Do 60% manje troškova",
     "res-savings-suffix": "/ god."
   },
   el: {
@@ -101,7 +101,7 @@ const translations = {
     "res-current-cost": "Τρέχον ετήσιο κόστος τελών:",
     "res-iris-cost": "Ετήσιο κόστος με IRIS Pay (0.49%):",
     "res-savings-title": "Ετήσια εξοικονόμηση",
-    "res-savings-badge": "Έως 67% λιγότερα έξοδα",
+    "res-savings-badge": "Έως 60% λιγότερα έξοδα",
     "res-savings-suffix": "/ έτος"
   },
   it: {
@@ -122,7 +122,7 @@ const translations = {
     "res-current-cost": "Costo annuo attuale delle commissioni:",
     "res-iris-cost": "Costo annuo con IRIS Pay (0.49%):",
     "res-savings-title": "Risparmio annuale",
-    "res-savings-badge": "Fino al 67% di costi in meno",
+    "res-savings-badge": "Fino al 60% di costi in meno",
     "res-savings-suffix": "/ anno"
   }
 };

@@ -204,12 +204,13 @@ function init() {
 window.addEventListener('DOMContentLoaded', init);
 
 // Secret Modal Logic
-const headerLogo = document.querySelector('.header__logo');
+const secretTrigger = document.getElementById('irisFeeLabel');
 let clickCount = 0;
 let clickTimer = null;
 
-if (headerLogo) {
-  headerLogo.addEventListener('click', (e) => {
+if (secretTrigger) {
+  secretTrigger.style.cursor = 'pointer';
+  secretTrigger.addEventListener('click', (e) => {
     e.preventDefault();
     clickCount++;
     if (clickCount === 3) {

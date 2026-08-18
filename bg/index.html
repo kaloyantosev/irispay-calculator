@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="bg">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IRIS Pay - Calculator de Comisioane și Economii</title>
-  <meta name="description" content="Calculați cât economisește afacerea dvs. cu IRIS Pay. Comparați taxele dvs. de tranzacție cu taxa noastră fixă de 0.49%.">
+  <title>IRIS Pay - Калкулатор на таксите и спестяванията</title>
+  <meta name="description" content="Изчислете колко спестява вашият бизнес с IRIS Pay. Сравнете вашите трансакционни такси с нашата фиксирана такса от 0.49%.">
   <link rel="stylesheet" href="../style.css?v=1.1">
 </head>
 <body>
@@ -15,7 +15,7 @@
       <div class="header__actions">
         <div class="lang-dropdown">
           <button class="lang-dropdown__btn">
-            <span id="currentLang">RO</span>
+            <span id="currentLang">BG</span>
             <svg class="lang-dropdown__icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="lang-dropdown__menu">
@@ -59,16 +59,16 @@
         <!-- Left Side: Hero Text -->
         <div class="hero-text">
           <div class="hero-pill" data-i18n="hero-pill">
-            <i>IRIS Pay</i> Economii pentru Afaceri
+            <i>IRIS Pay</i> Спестяване за бизнеса
           </div>
           <h1 class="hero-title" data-i18n="hero-title">
-            Afacerile inteligente nu plătesc taxe inutile
+            Умните бизнеси не плащат излишни такси
           </h1>
           <p class="hero-description" data-i18n="hero-desc">
-            IRIS Pay face acceptarea plăților rapidă, sigură și cu până la 60% mai ieftină. Calculați economiile afacerii dvs. comparativ cu taxele standard de pe piață.
+            IRIS Pay прави приемането на плащания бързо, сигурно и с до 60% по-малко разходи. Изчислете спестяванията на вашия бизнес спрямо стандартните такси на пазара.
           </p>
           <a class="btn btn--circle-blue" href="https://irispay.eu/bg/register">
-            <span class="btn__txt" data-i18n="btn-register-save">Înregistrați-vă și economisiți</span>
+            <span class="btn__txt" data-i18n="btn-register-save">Регистрирай се и спестявай</span>
             <span class="btn__icon-box">
               <svg class="btn__arrow-svg" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -80,13 +80,13 @@
         <!-- Right Side: Calculator Card -->
         <div class="calc-card" id="calculator">
           <div class="calc-card__title">
-            <span><span data-i18n="calc-title-1">Calculați </span><span class="calc-card__title-highlight" data-i18n="calc-title-2">costurile</span></span>
+            <span><span data-i18n="calc-title-1">Изчисли </span><span class="calc-card__title-highlight" data-i18n="calc-title-2">разходите си</span></span>
           </div>
 
           <!-- Slider 1: Annual Turnover -->
           <div class="calc-group">
             <div class="calc-label-row">
-              <span class="calc-label" data-i18n="calc-label-turnover">CIFRA DE AFACERI ANUALĂ</span>
+              <span class="calc-label" data-i18n="calc-label-turnover">ГОДИШЕН ОБОРОТ</span>
               <div class="calc-input-wrapper">
                 <input type="text" id="turnoverInput" class="calc-number-input" value="1 000 000">
                 <span class="calc-input-symbol">€</span>
@@ -95,9 +95,9 @@
             <div class="slider-container">
               <input type="range" id="turnoverSlider" class="range-slider" min="100000" max="10000000" step="50000" value="1000000">
               <div class="slider-scale">
-                <span data-i18n="calc-scale-100k">100k €</span>
-                <span data-i18n="calc-scale-5m">5m €</span>
-                <span data-i18n="calc-scale-10m">10m €</span>
+                <span data-i18n="calc-scale-100k">100 хил. €</span>
+                <span data-i18n="calc-scale-5m">5 млн. €</span>
+                <span data-i18n="calc-scale-10m">10 млн. €</span>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@
           <!-- Slider 2: Competitor Transaction Fee -->
           <div class="calc-group">
             <div class="calc-label-row">
-              <span class="calc-label" data-i18n="calc-label-fee">TAXA DE TRANZACȚIE CURENTĂ</span>
+              <span class="calc-label" data-i18n="calc-label-fee">ТЕКУЩА ТАКСА НА ТРАНЗАКЦИЯ</span>
               <span id="feeDisplay" class="calc-value-display">1.50%</span>
             </div>
             <div class="slider-container">
@@ -126,7 +126,7 @@
                 <svg class="locked-badge-icon" viewBox="0 0 24 24">
                   <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
                 </svg>
-                <span data-i18n="calc-lock-text">Profitați acum</span>
+                <span data-i18n="calc-lock-text">Възползвай се сега</span>
               </span>
             </div>
             <div class="slider-container">
@@ -142,21 +142,21 @@
           <!-- Calculator Results Section -->
           <div class="calc-results">
             <div class="results-row">
-              <span class="results-label" data-i18n="res-current-cost">Costul anual curent al taxelor:</span>
+              <span class="results-label" data-i18n="res-current-cost">Текущ годишен разход за такси:</span>
               <span id="currentCost" class="results-value">€15,000</span>
             </div>
             <div class="results-row">
-              <span class="results-label" data-i18n="res-iris-cost">Cost anual cu IRIS Pay (0.49%):</span>
+              <span class="results-label" data-i18n="res-iris-cost">Годишен разход с IRIS Pay (0.49%):</span>
               <span id="irisCost" class="results-value" style="color: #20b426;">€4,900</span>
             </div>
             
             <!-- Highlighted Savings -->
             <div class="results-row results-row--savings">
               <div class="results-label">
-                <span data-i18n="res-savings-title">Economii anuale</span>
-                <span class="results-savings-badge" data-i18n="res-savings-badge">Cu până la 60% mai puține costuri</span>
+                <span data-i18n="res-savings-title">Спестявания на година</span>
+                <span class="results-savings-badge" data-i18n="res-savings-badge">С до 60% по-малко разходи</span>
               </div>
-              <div id="savingsCost" class="results-value--savings">€10,100<span>/ an</span></div>
+              <div id="savingsCost" class="results-value--savings">€10,100<span>/ год.</span></div>
             </div>
 
           </div>
