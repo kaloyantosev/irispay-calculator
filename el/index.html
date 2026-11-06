@@ -32,7 +32,7 @@
   </header>
 
   <!-- Main Hero Wrapper -->
-  <main class="hero-wrapper">
+  <main class="hero-wrapper wrap">
     <!-- Liquid Gradient Background -->
     <div class="gradient-bg">
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -182,5 +182,32 @@
 
   <script src="../i18n.js?v=1.1"></script>
   <script src="../app.js?v=1.1"></script>
+  <script>
+    // Изпраща височината на съдържанието към родителската страница
+    if (window.self !== window.top) {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+
+      const content = document.querySelector(".wrap") || document.querySelector(".hero-wrapper") || document.body;
+      let lastHeight = 0;
+
+      const postHeight = () => {
+        if (!content) return;
+        const height = Math.ceil(content.getBoundingClientRect().height);
+        if (height === lastHeight || height === 0) return;
+        lastHeight = height;
+        window.parent.postMessage({ type: "compound-calc:height", height }, "*");
+      };
+
+      if (window.ResizeObserver && content) {
+        new ResizeObserver(postHeight).observe(content);
+      }
+      window.addEventListener("load", postHeight);
+      document.querySelectorAll("details").forEach((d) =>
+        d.addEventListener("toggle", postHeight)
+      );
+      postHeight();
+    }
+  </script>
 </body>
 </html>
